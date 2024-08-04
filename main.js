@@ -1,15 +1,15 @@
-const displayBox = document.getElementById("display");
 
-let button = document.querySelectorAll("button");
-    button.forEach(element => {
-        addEventListener('click', event => {
-            let x = document.getElementById(button[2]);
-            console.log(x);
-        })
-    });
 
-    function updateDisplay(){
-        let x = document.getElementById("5");
-        document.getElementById("display").value = x;
-        console.log(x);
-    }
+
+// const displayBox = document.getElementById("display");
+
+function displayNumber (x){
+    //x should appear in the display div
+    console.log(x);
+
+    let display = document.getElementById('display');
+    display.value = x;
+}
+
+
+    // displayNumber(5);

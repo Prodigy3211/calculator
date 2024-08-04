@@ -9,10 +9,11 @@ Requiremnts:
 
 Then
 
-Display area : e
-
 2) Buttons
 
     Numbers
     Operators + - * /
     Calculate =
+
+
+3) 

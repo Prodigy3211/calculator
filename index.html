@@ -7,23 +7,23 @@
 </head>
 <body>
     <div class="calculator" id="parentDiv">
-        <input type="text" readonly id="display" class="display" name="display"> 
-        <button class="keys" id="+">+</button>
-        <button class="keys" id="-">-</button>
-        <button class="keys" id="*">*</button>
+        <input type="text" readonly id="display" value="0" class="display" name="display" style="color:black"> 
+        <button class="keys" id="+" onclick="displayNumber('/+')">+</button>
+        <button class="keys" id="-" onclick="displayNumber('-')">-</button>
+        <button class="keys" id="*" onclick="displayNumber('*')">*</button>
         <button class="calculate" id="=">=</button>
-        <button class="keys" id="/">/</button>
+        <button class="keys" id="/" onclick="displayNumber('/')">/</button>
         <button class="keys" id=".">.</button>
-        <button class="keys" id="0">0</button>
-        <button class="keys" id="9">9</button>
-        <button class="keys" id="8">8</button>
-        <button class="keys" id="7">7</button>
-        <button class="keys" id="6">6</button>
-        <button class="keys" id="5">5</button>
-        <button class="keys" id="4">4</button>
-        <button class="keys" id="3">3</button>
-        <button class="keys" id="2">2</button>
-        <button class="keys" id="1">1</button>
+        <button class="keys" id="0" onclick="displayNumber(0)">0</button>
+        <button class="keys" id="9" onclick="displayNumber(9)">9</button>
+        <button class="keys" id="8" onclick="displayNumber(8)">8</button>
+        <button class="keys" id="7" onclick="displayNumber(7)">7</button>
+        <button class="keys" id="6" onclick="displayNumber(6)">6</button>
+        <button class="keys" id="5" onclick="displayNumber(5)">5</button>
+        <button class="keys" id="4" onclick="displayNumber(4)">4</button>
+        <button class="keys" id="3" onclick="displayNumber(3)">3</button>
+        <button class="keys" id="2" onclick="displayNumber(2)">2</button>
+        <button class="keys" id="1" onclick="displayNumber(1)">1</button>
         <button class="clear" id="C">C</button>
     </div>
 
