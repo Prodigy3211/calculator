@@ -23,16 +23,22 @@ function updateDisplay (varOne){
     }
 };
 
-function calculate(x,y){
+function calculate(){
  //Take the values from each array calculate the result and display it
-    if (operatorArray.includes('+')){
-        let x = numberArray[0];
-        let y = numberArray[1];
-        let display = document.getElementById('display');
-
-        display.value = x += y;
-    }
+    let x = numberArray[0];
+    let y = numberArray[1];
+    let display = document.getElementById('display');   
+        if (operatorArray.includes('+')){
+                display.value = x += y;
+        } else if(operatorArray.includes('-')){
+                display.value = x-=y;
+        } else if (operatorArray.includes('*')){
+                display.value = x*=y;
+        } else if (operatorArray.includes('/')){
+                display.value = (x /= y);
+        }
 }
+
 
 
     // displayNumber(5);
