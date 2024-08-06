@@ -7,11 +7,11 @@ let operatorArray = [];
 
 function updateDisplay (varOne){
     //the display div should update with the key pressed
-    console.log(varOne);
     if (typeof varOne == "number"){
     let display = document.getElementById('display');
     display.value = varOne;
         numberArray.push(varOne);
+        console.log(numberArray);
     } else if (typeof varOne == "string") {
         placeOperator(varOne);
         function placeOperator(){ 
