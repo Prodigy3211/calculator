@@ -10,6 +10,8 @@ function updateDisplay (varOne){
     if (typeof varOne == "number"){
     let display = document.getElementById('display');
     display.value = varOne;
+        
+            //push new value to numberArray
         numberArray.push(varOne);
         console.log(numberArray);
     } else if (typeof varOne == "string") {
@@ -29,7 +31,9 @@ function calculate(){
     let y = numberArray[1];
     let display = document.getElementById('display');   
         if (operatorArray.includes('+')){
-                display.value = x += y;
+               display.value = x += y;
+               let result = display.value;
+                return result;
         } else if(operatorArray.includes('-')){
                 display.value = x-=y;
         } else if (operatorArray.includes('*')){
@@ -39,6 +43,8 @@ function calculate(){
         } else {
             display.value = "Error";
         }
+
+        console.log(result);
 }
 
 function clearDisplay(){
