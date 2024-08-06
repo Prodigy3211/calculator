@@ -1,0 +1,8 @@
+.calculator{
+    border: 2px solid green;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 950px;
+    height: auto;
+    
+}
