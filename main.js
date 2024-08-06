@@ -36,9 +36,16 @@ function calculate(){
                 display.value = x*=y;
         } else if (operatorArray.includes('/')){
                 display.value = (x /= y);
+        } else {
+            display.value = "Error";
         }
 }
 
-
+function clearDisplay(){
+    //Will clear the display area of any results.
+    display.value = 0;
+    numberArray =[];
+    operatorArray = [];
+}
 
     // displayNumber(5);
