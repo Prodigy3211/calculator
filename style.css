@@ -1,9 +1,8 @@
 .calculator{
     border: 2px solid green;
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    width: 950px;
-    height: 450px;
+    width: 450px;
+    height: 550px;
     position: static;
     /* flex-flow: row wrap; */
     grid-template-areas: 

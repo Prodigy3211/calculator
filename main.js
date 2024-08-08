@@ -32,8 +32,6 @@ function calculate(){
     let display = document.getElementById('display');   
         if (operatorArray.includes('+')){
                display.value = x += y;
-               let result = display.value;
-                return result;
         } else if(operatorArray.includes('-')){
                 display.value = x-=y;
         } else if (operatorArray.includes('*')){
@@ -43,8 +41,8 @@ function calculate(){
         } else {
             display.value = "Error";
         }
-
-        console.log(result);
+        numberArray = [];
+        numberArray.push(Number(display.value));
 }
 
 function clearDisplay(){
