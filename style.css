@@ -1,12 +1,102 @@
 .calculator{
     border: 2px solid green;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
     width: 950px;
-    height: auto;
+    height: 450px;
+    position: static;
     /* flex-flow: row wrap; */
+    grid-template-areas: 
+    'display display display clear'
+    'display display display divide'
+    'seven eight nine multi'
+    'four five six minus'
+    'one two three plus'
+    'key0 key0 deci calculate';
 }
 
-.keys{
+/*display area*/
 
+.display{
+    grid-area: display;
+    font-size: 1rem;
 }
+
+
+.clear{
+    grid-area: clear;
+    
+}
+
+.calculate{
+    grid-area: calculate;
+}
+
+/* Number Keys */
+
+.key1{
+    grid-area: one;
+}
+
+.key2{
+    grid-area: two;
+    
+}
+.key3{
+    grid-area: three;
+    
+}
+.key4{
+    grid-area: four;
+    
+}
+
+.key5{
+    grid-area: five;
+    
+}
+.key6{
+    grid-area: six;
+    
+}
+.key7{
+    grid-area: seven;
+    
+}
+.key8{
+    grid-area: eight;
+    
+}
+.key9{
+    grid-area: nine;
+    
+}
+.keyDecimal{
+    grid-area: deci;
+    
+}
+
+.key0{
+    grid-area: key0;
+}
+
+/*operators*/
+
+.divide{
+    grid-area: divide;
+    
+}
+.multi{
+    grid-area: multi;
+    
+}
+.plus{
+    grid-area: plus;
+    
+}
+.minus{
+    grid-area: minus;
+    
+}
+
+
