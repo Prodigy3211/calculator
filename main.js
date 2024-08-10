@@ -2,8 +2,9 @@
 
 //Create array to hold display values
 
-let numberArray = [];
+let firstNumberArray = [];
 let operatorArray = [];
+let secondNumberArray = [];
 let clicks = 0
 
 
@@ -13,18 +14,27 @@ function updateDisplay (varOne){
     
     if (typeof varOne == "number"){
         let display = document.getElementById('display');
-        if(clicks === 1) {
+    //Need a way to it to check if the Operator has been added.
+        
+        if(clicks === 1 && operatorArray.length === 0) {
             display.value = varOne;
-            numberArray.push(varOne);
-        } else if(clicks === 2) {
-            display.value = " " + varOne + varOne;
-            numberArray = [];
-            numberArray.push(Number(display.value));
+            firstNumberArray.push(varOne);
+        } else if(clicks >= 2 && operatorArray.length === 0) {
+            display.value = " " + firstNumberArray[0] + varOne;
+            firstNumberArray = [];
+            firstNumberArray.push(Number(display.value));
+            clicks = 0;
+            console.log(firstNumberArray);
+        } else if (clicks === 1 && operatorArray.length === 1){
+            display.value = varOne;
+            secondNumberArray.push(varOne);
+            console.log(secondNumberArray);
+        } else if (clicks >= 2 && operatorArray.length === 1){
+            display.value = " " + secondNumberArray+ varOne;
+            secondNumberArray = [];
+            secondNumberArray.push(Number(display.value));
+            console.log(secondNumberArray);
         }
-        //push new value to numberArray
-        //can we clear the number Array and then add new value with two numbers on second click?
-        // numberArray.push(varOne);
-        console.log(numberArray);
         
     } else if (typeof varOne == "string") {
         placeOperator(varOne);
@@ -39,8 +49,9 @@ function updateDisplay (varOne){
 
 function calculate(){
  //Take the values from each array calculate the result and display it
-    let x = numberArray[0];
-    let y = numberArray[1];
+    let x = firstNumberArray[0];
+    let y = secondNumberArray[0];
+    clicks = 0;
     let display = document.getElementById('display');   
         if (operatorArray.includes('+')){
                display.value = x += y;
@@ -53,15 +64,18 @@ function calculate(){
         } else {
             display.value = "Error";
         }
-        numberArray = [];
-        numberArray.push(Number(display.value));
+        firstNumberArray = [];
+        firstNumberArray.push(Number(display.value));
 }
 
 function clearDisplay(){
     //Will clear the display area of any results.
     display.value = 0;
-    numberArray =[];
+    firstNumberArray =[];
+    secondNumberArray= [];
     operatorArray = [];
+    clicks = 0;
+    console.log(display.value);
 }
 
     // displayNumber(5);
