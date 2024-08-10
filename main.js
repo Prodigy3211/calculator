@@ -4,16 +4,28 @@
 
 let numberArray = [];
 let operatorArray = [];
+let clicks = 0
+
 
 function updateDisplay (varOne){
     //the display div should update with the key pressed
+    clicks++; 
+    
     if (typeof varOne == "number"){
-    let display = document.getElementById('display');
-    display.value = varOne;
-        
-            //push new value to numberArray
-        numberArray.push(varOne);
+        let display = document.getElementById('display');
+        if(clicks === 1) {
+            display.value = varOne;
+            numberArray.push(varOne);
+        } else if(clicks === 2) {
+            display.value = " " + varOne + varOne;
+            numberArray = [];
+            numberArray.push(Number(display.value));
+        }
+        //push new value to numberArray
+        //can we clear the number Array and then add new value with two numbers on second click?
+        // numberArray.push(varOne);
         console.log(numberArray);
+        
     } else if (typeof varOne == "string") {
         placeOperator(varOne);
         function placeOperator(){ 
