@@ -25,11 +25,11 @@ function updateDisplay (varOne){
             firstNumberArray.push(Number(display.value));
             clicks = 0;
             console.log(firstNumberArray);
-        } else if (clicks === 1 && operatorArray.length === 1){
+        } else if (clicks === 1 && operatorArray.length >= 1){
             display.value = varOne;
             secondNumberArray.push(varOne);
             console.log(secondNumberArray);
-        } else if (clicks >= 2 && operatorArray.length === 1){
+        } else if (clicks >= 2 && operatorArray.length >= 1){
             display.value = " " + secondNumberArray+ varOne;
             secondNumberArray = [];
             secondNumberArray.push(Number(display.value));
@@ -42,7 +42,12 @@ function updateDisplay (varOne){
         //places the selected operator in the display
         let display = document.getElementById('display');
         display.value = varOne;
+            if (operatorArray.length < 1){
+                operatorArray.push(varOne);
+            } else {
+            operatorArray.shift();
             operatorArray.push(varOne);
+            }
         }
     }
 };
@@ -55,16 +60,21 @@ function calculate(){
     let display = document.getElementById('display');   
         if (operatorArray.includes('+')){
                display.value = x += y;
+               clicks++
         } else if(operatorArray.includes('-')){
-                display.value = x-=y;
+               display.value = x-=y;
+               clicks++; 
         } else if (operatorArray.includes('*')){
                 display.value = x*=y;
+                clicks++;
         } else if (operatorArray.includes('/')){
                 display.value = (x /= y);
+                clicks++;
         } else {
             display.value = "Error";
         }
         firstNumberArray = [];
+        secondNumberArray =[];
         firstNumberArray.push(Number(display.value));
 }
 
