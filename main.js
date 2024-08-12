@@ -20,20 +20,22 @@ function updateDisplay (varOne){
             display.value = varOne;
             firstNumberArray.push(varOne);
         } else if(clicks >= 2 && operatorArray.length === 0) {
-            display.value = " " + firstNumberArray[0] + varOne;
+            display.value = "" + firstNumberArray[0] + varOne;
             firstNumberArray = [];
             firstNumberArray.push(Number(display.value));
             clicks = 0;
             console.log(firstNumberArray);
-        } else if (clicks === 1 && operatorArray.length >= 1){
+        } else if (clicks === 3 && operatorArray.length >= 1){
             display.value = varOne;
+            secondNumberArray = [];
             secondNumberArray.push(varOne);
             console.log(secondNumberArray);
-        } else if (clicks >= 2 && operatorArray.length >= 1){
-            display.value = " " + secondNumberArray+ varOne;
+        } else if (clicks > 3 && operatorArray.length >= 1){
+            display.value = "" + secondNumberArray+ varOne;
             secondNumberArray = [];
             secondNumberArray.push(Number(display.value));
             console.log(secondNumberArray);
+            console.log(clicks);
         }
         
     } else if (typeof varOne == "string") {
@@ -60,22 +62,19 @@ function calculate(){
     let display = document.getElementById('display');   
         if (operatorArray.includes('+')){
                display.value = x += y;
-               clicks++
         } else if(operatorArray.includes('-')){
-               display.value = x-=y;
-               clicks++; 
+               display.value = x-=y; 
         } else if (operatorArray.includes('*')){
                 display.value = x*=y;
-                clicks++;
         } else if (operatorArray.includes('/')){
                 display.value = (x /= y);
-                clicks++;
         } else {
             display.value = "Error";
         }
         firstNumberArray = [];
-        secondNumberArray =[];
+        // secondNumberArray =[];
         firstNumberArray.push(Number(display.value));
+        console.log(operatorArray);
 }
 
 function clearDisplay(){
